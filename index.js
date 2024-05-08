@@ -32,4 +32,22 @@ Rooster.timeAtDawn = (hour) => {
   };
 }
 
-module.exports = Rooster;
+const caseToggle = (input) => {
+
+  const pattern = /[A-Z]/;
+
+if(pattern.test(input)){
+  return input.toLowerCase()
+}else{
+  return input.toUpperCase()
+}
+
+
+
+}
+
+module.exports = {
+  Rooster,
+  caseToggle
+}
+
