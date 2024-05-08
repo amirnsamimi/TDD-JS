@@ -1,11 +1,10 @@
-//learning Mocha Testing suit, using TDD, BDD, ATDD, ... 
+//learning Mocha Testing suit, using TDD, BDD, ATDD, ...
 // 6 MAY 2024
-// AMIR SAMIMI 
-
+// AMIR SAMIMI
 
 // //sample for uploading file
 // document.querySelector("input").addEventListener("change",(e)=>{
-//    let uploadedFile = e.target.files[0] 
+//    let uploadedFile = e.target.files[0]
 //    const reader = new FileReader();
 //    reader.onload = function(event) {
 //        const contents = event.target.result;
@@ -19,38 +18,47 @@ let Rooster = {};
 
 // Return a morning rooster call
 Rooster.announceDawn = () => {
-  return 'cock-a-doodle-doo!';
-}
+  return "cock-a-doodle-doo!";
+};
 
 // Return hour as string
 // Throws Error if hour is not between 0 and 23 inclusive
 Rooster.timeAtDawn = (hour) => {
   if (hour < 0 || hour > 23) {
-    throw new RangeError;
+    throw new RangeError();
   } else {
     return hour;
-  };
-}
+  }
+};
 
 const caseToggle = (input) => {
-
   const UpperPattern = /[A-Z]/;
   const LowerPattern = /[a-z]/;
 
-if(UpperPattern.test(input)){
-  return input.toLowerCase()
-}else if(LowerPattern.test(input)) {
-  return input.toUpperCase()
-}else{
-  return input.toLowerCase()
-}
+  if (UpperPattern.test(input)) {
+    return input.toLowerCase();
+  } else if (LowerPattern.test(input)) {
+    return input.toUpperCase();
+  } else {
+    return input.toLowerCase();
+  }
+};
 
+const Calculate = {};
 
-
-}
+Calculate.factorial = (input) => {
+  if (input === 0) return 1;
+  const arrayOfInput = [];
+  for (let i = input; i > 0; i--) {
+    arrayOfInput.push(i);
+  }
+  return arrayOfInput.reduce((acc,value)=>{
+    return acc*value
+  })
+};
 
 module.exports = {
   Rooster,
-  caseToggle
-}
-
+  caseToggle,
+  Calculate,
+};

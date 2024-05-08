@@ -1,7 +1,7 @@
 //ES6
 
 const assert = require("assert");
-const { Rooster, caseToggle } = require("../index");
+const { Rooster, caseToggle, Calculate } = require("../index");
 
 //testing negativity on mocha for js
 describe("-", () => {
@@ -131,5 +131,30 @@ describe("caseToggle", () => {
     const result = pattern.test(caseToggle(input));
     //verify
     assert.ok(result);
+  });
+});
+
+
+//factorial test
+describe('Calculate', () => {
+  describe('.factorial', () => {
+    it('0!',()=>{
+      //setup
+      const input = 0
+      const expected = 1
+      //expectation
+      const result = Calculate.factorial(input);
+      //verify
+      assert.strictEqual(result,expected)
+    });
+    it('!0',()=>{
+            //setup
+      const input = 10
+      const expected = 3628800
+      //expectation
+      const result = Calculate.factorial(input);
+      //verify
+      assert.strictEqual(result,expected)
+    })
   });
 });
