@@ -103,16 +103,14 @@ describe("Rooster", () => {
   });
 });
 
-//upper lower
+//upper lower toggler
 describe("caseToggle", () => {
   it("check if we put in a lower and get an upper", () => {
     //setup
     const input = "hello";
     const pattern = /[A-Z]/;
-
     //execution
     const result = pattern.test(caseToggle(input));
-
     //verify
     assert.ok(result);
   });
@@ -120,22 +118,18 @@ describe("caseToggle", () => {
     //setup
     const input = "HELLO";
     const pattern = /[a-z]/;
-
     //execution
     const result = pattern.test(caseToggle(input));
-
     //verify
     assert.ok(result);
   });
-  it("check if there is a mixed case and make it low",()=>{
+  it("check if there is a mixed case and make it low", () => {
     //setup
     const input = "HelLo";
     const pattern = /[a-z]/;
-
     //execution
     const result = pattern.test(caseToggle(input));
-
     //verify
     assert.ok(result);
-  })
+  });
 });
