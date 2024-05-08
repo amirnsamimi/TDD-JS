@@ -127,4 +127,15 @@ describe("caseToggle", () => {
     //verify
     assert.ok(result);
   });
+  it("check if there is a mixed case and make it low",()=>{
+    //setup
+    const input = "HelLo";
+    const pattern = /[a-z]/;
+
+    //execution
+    const result = pattern.test(caseToggle(input));
+
+    //verify
+    assert.ok(result);
+  })
 });

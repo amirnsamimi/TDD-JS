@@ -34,12 +34,15 @@ Rooster.timeAtDawn = (hour) => {
 
 const caseToggle = (input) => {
 
-  const pattern = /[A-Z]/;
+  const UpperPattern = /[A-Z]/;
+  const LowerPattern = /[a-z]/;
 
-if(pattern.test(input)){
+if(UpperPattern.test(input)){
   return input.toLowerCase()
-}else{
+}else if(LowerPattern.test(input)) {
   return input.toUpperCase()
+}else{
+  return input.toLowerCase()
 }
 
 
